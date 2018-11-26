@@ -12,7 +12,7 @@ def read(fn=filename):
 def search(term, onions=lambda: read()):
 	res = []
 	for domain in onions():
-		if term in domain:
+		if term in domain.split(".onion")[0]:
 			res.append(domain)
 	return res
 def delete(domain):
